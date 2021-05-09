@@ -1,7 +1,10 @@
 ---
 title: JSON
 date: 2021-04-27 17:24:04
-tags: JSON
+urlname: JSON
+tags: 
+  - JSON
+  - Golang
 categories: Golang
 ---
 
@@ -10,6 +13,8 @@ categories: Golang
 JSON（JavaScript Object Notation）是一种简单的数据交换格式。
 从句法上讲，它类似于 JavaScript 的对象和列表。
 它最常用于 Web 后端和浏览器中运行的 JavaScript 程序之间的通信，但它也用于许多其他地方。
+
+<!-- more -->
 
 ## Encoding
 
