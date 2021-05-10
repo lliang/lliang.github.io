@@ -1,8 +1,9 @@
 ---
 title: JSON
-date: 2021-04-27 17:24:04
 urlname: JSON
-tags: 
+date: 2021-04-27 17:24:04
+update: 2021-05-09 19:56:48
+tags:
   - JSON
   - Golang
 categories: Golang
@@ -49,7 +50,7 @@ JSON（JavaScript Object Notation）是一种简单的数据交换格式。
   当您希望从大型 `JSON Blob` 中仅选择几个特定字段时，此行为特别有用。
   这也意味着目标结构中任何未导出的字段都不会受到 `Unmarshal` 的影响。
 
-## `interface{}`
+## interface {}
 
 `interface {}`（空接口）类型描述了一个零方法接口。
 
