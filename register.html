@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"lliang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="介绍JSON（JavaScript Object Notation）是一种简单的数据交换格式。从句法上讲，它类似于 JavaScript 的对象和列表。它最常用于 Web 后端和浏览器中运行的 JavaScript 程序之间的通信，但它也用于许多其他地方。">
+  <meta name="description" content="8086 CPU 的所有寄存器都是 16 位的，可以存放两个字节。 8086 CPU 有 14 个寄存器： AX BX CX DX SI DI SP BP IP CS SS DS ES PSW  reg: 表示一个寄存器；  sreg: 表示一个段寄存器。  reg: ax, bx, cx, dx, ah, al, bh, bl, ch, cl, dh, dl, sp, bp, si, di, i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSON">
-<meta property="og:url" content="https://lliang.github.io/JSON.html">
+<meta property="og:title" content="寄存器">
+<meta property="og:url" content="https://lliang.github.io/register.html">
 <meta property="og:site_name" content="Liu Liang">
-<meta property="og:description" content="介绍JSON（JavaScript Object Notation）是一种简单的数据交换格式。从句法上讲，它类似于 JavaScript 的对象和列表。它最常用于 Web 后端和浏览器中运行的 JavaScript 程序之间的通信，但它也用于许多其他地方。">
+<meta property="og:description" content="8086 CPU 的所有寄存器都是 16 位的，可以存放两个字节。 8086 CPU 有 14 个寄存器： AX BX CX DX SI DI SP BP IP CS SS DS ES PSW  reg: 表示一个寄存器；  sreg: 表示一个段寄存器。  reg: ax, bx, cx, dx, ah, al, bh, bl, ch, cl, dh, dl, sp, bp, si, di, i">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-27T09:24:04.000Z">
+<meta property="article:published_time" content="2021-05-13T10:03:48.000Z">
 <meta property="article:modified_time" content="2021-05-13T10:48:46.533Z">
 <meta property="article:author" content="Liu Liang">
-<meta property="article:tag" content="JSON">
-<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="Assembly">
+<meta property="article:tag" content="8086">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lliang.github.io/JSON.html">
+<link rel="canonical" href="https://lliang.github.io/register.html">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>JSON | Liu Liang</title>
+  <title>寄存器 | Liu Liang</title>
   
 
 
@@ -162,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/JSON.html">
+    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/register.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -175,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JSON
+          寄存器
         </h1>
 
         <div class="post-meta">
@@ -184,23 +184,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-27 17:24:04" itemprop="dateCreated datePublished" datetime="2021-04-27T17:24:04+08:00">2021-04-27</time>
+              <time title="创建时间：2021-05-13 18:03:48 / 修改时间：18:48:46" itemprop="dateCreated datePublished" datetime="2021-05-13T18:03:48+08:00">2021-05-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-13 18:48:46" itemprop="dateModified" datetime="2021-05-13T18:48:46+08:00">2021-05-13</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a>
+                  <a href="/categories/Assembly/" itemprop="url" rel="index"><span itemprop="name">Assembly</span></a>
                 </span>
             </span>
 
@@ -229,50 +223,74 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>JSON（JavaScript Object Notation）是一种简单的数据交换格式。<br>从句法上讲，它类似于 JavaScript 的对象和列表。<br>它最常用于 Web 后端和浏览器中运行的 JavaScript 程序之间的通信，但它也用于许多其他地方。</p>
+        <p>8086 CPU 的所有寄存器都是 16 位的，可以存放两个字节。</p>
+<p>8086 CPU 有 14 个寄存器：</p>
+<p>AX BX CX DX SI DI SP BP IP CS SS DS ES PSW</p>
+<ul>
+<li><p>reg: 表示一个寄存器；</p>
+</li>
+<li><p>sreg: 表示一个段寄存器。</p>
+</li>
+<li><p>reg: ax, bx, cx, dx, ah, al, bh, bl, ch, cl, dh, dl, sp, bp, si, di, ip, psw;</p>
+</li>
+<li><p>sreg: ds, ss, cs, es.</p>
+</li>
+</ul>
 <span id="more"></span>
 
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><p>要编码 JSON 数据，我们使用 <code>Marshal</code> 函数。</p>
-<p><code>func Marshal(v interface&#123;&#125;) ([]byte, error)</code></p>
-<p>只有可以表示为有效 JSON 的数据结构才会被编码：</p>
+<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p>AX BX CX DX</p>
+<p>通常用来存放一般性的数据。</p>
+<p>可以分为两个独立使用的 8 位寄存器来用：</p>
 <ul>
-<li><p>JSON 对象仅支持将字符串作为键；<br>要编码 <code>Go map</code> 类型，它必须采用 <code>map [string] T</code> 的形式（其中 <code>T</code> 是 <code>json</code> 包支持的任何 Go 类型）。</p>
-</li>
-<li><p><code>Channel</code>, <code>complex</code>, and <code>function</code> types 无法编码。</p>
-</li>
-<li><p>不支持循环数据结构；<br>它们将导致 <code>Marshal</code> 陷入无限循环</p>
-</li>
-<li><p>指针将被编码为其指向的值（如果指针为 <code>nil</code>，则为 <code>null</code>）。</p>
-</li>
-<li><p>json 包仅访问结构类型（以大写字母开头的结构类型）的导出字段。</p>
-<p>因此，在 JSON 输出中仅会显示结构的导出字段。</p>
-</li>
+<li>AX 可分为 AH 和 AL</li>
+<li>BX 可分为 BH 和 BL</li>
+<li>CX 可分为 CH 和 CL</li>
+<li>DX 可分为 DH 和 DL</li>
 </ul>
-<h2 id="Decoding"><a href="#Decoding" class="headerlink" title="Decoding"></a>Decoding</h2><p>要解码 JSON 数据，我们使用 <code>Unmarshal</code> 函数。</p>
-<p><code>func Unmarshal(data []byte, v interface&#123;&#125;) error</code></p>
-<ul>
-<li><p><code>Unmarshal</code> 将仅解码它可以在目标类型中找到的字段。</p>
-<p>当您希望从大型 <code>JSON Blob</code> 中仅选择几个特定字段时，此行为特别有用。<br>这也意味着目标结构中任何未导出的字段都不会受到 <code>Unmarshal</code> 的影响。</p>
-</li>
+<h3 id="CX"><a href="#CX" class="headerlink" title="CX"></a>CX</h3><p>作用：</p>
+<ol>
+<li>Debug 将程序从可执行文件加载入内存后，CX 中存放的是程序的长度。</li>
+<li>使用 loop 指令实现循环功能时，CX 中存放循环次数。<br>CPU 执行 loop 指令的时候，进行两步操作：<ol>
+<li>(CX) = (CX) - 1;</li>
+<li>判断 CX 中的值：<ul>
+<li>不为零则转至标号处执行程序；</li>
+<li>为零则向下执行。</li>
 </ul>
-<h2 id="interface"><a href="#interface" class="headerlink" title="interface {}"></a>interface {}</h2><p><code>interface &#123;&#125;</code>（空接口）类型描述了一个零方法接口。</p>
-<p>每个 Go 类型至少实现零个方法，因此满足空接口。</p>
-<p>类型断言访问基础的具体类型，或者，如果基础类型未知，则由类型开关确定类型：</p>
-<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> v := i.(<span class="keyword">type</span>) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">int</span>:</span><br><span class="line">    fmt.Println(<span class="string">&quot;twice i is&quot;</span>, v*<span class="number">2</span>)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">    fmt.Println(<span class="string">&quot;the reciprocal of i is&quot;</span>, <span class="number">1</span>/v)</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">    h := <span class="built_in">len</span>(v) / <span class="number">2</span></span><br><span class="line">    fmt.Println(<span class="string">&quot;i swapped by halves is&quot;</span>, v[h:]+v[:h])</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="comment">// i isn&#x27;t one of the types above</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>json 包使用 <code>map [string] interface &#123;&#125;</code> 和 <code>[] interface &#123;&#125;</code> 值存储任意 JSON 对象和数组；</p>
-<p>它将很乐意将任何有效的 <code>JSON Blob</code> 编组为纯接口{}值。</p>
-<p>默认的具体 Go 类型是：</p>
-<ul>
-<li><p><code>bool</code> for JSON <code>booleans</code>;</p>
 </li>
-<li><p><code>float64</code> for JSON <code>numbers</code>;</p>
+</ol>
 </li>
-<li><p><code>string</code> for JSON <code>strings</code>;</p>
+</ol>
+<h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><p>CS DS SS ES</p>
+<p>当 8086 CPU 要访问内存时由这 4 个段寄存器提供内存单元的段地址。</p>
+<p>在汇编语言中称为段前缀。</p>
+<h3 id="CS-和-IP"><a href="#CS-和-IP" class="headerlink" title="CS 和 IP"></a>CS 和 IP</h3><p>指示了 CPU 当前要读取指令的地址。</p>
+<p>CS: 代码段寄存器<br>IP：指令指针寄存器</p>
+<p>任意时刻，CPU 将 CS:IP 指向的内容当作指令执行。</p>
+<p>EXE 文件中程序的加载过程：</p>
+<ol>
+<li>找到一段起始地址为 SA:0000 的容量足够的空闲内存区；</li>
+<li>内存区的前 256 个字节中，创建一个称为“程序段前缀（PSP）”的数据区；<br>DOS 利用 PSP 来和被加载程序进行通信</li>
+<li>内存区的 256 字节处开始，将程序装入，程序的地址被设为 SA+10H:0;<br>空闲内存区：SA:0<br>PSP 区：SA:0<br>程序区：SA+10H:0</li>
+<li>将该内存区的段地址存入 ds 中，初始化其它相关寄存器后，设置 CS:IP 指向程序的入口。</li>
+</ol>
+<h3 id="DS"><a href="#DS" class="headerlink" title="DS"></a>DS</h3><p>通常用来存放要访问数据的段地址。</p>
+<h3 id="SS-和-SP"><a href="#SS-和-SP" class="headerlink" title="SS 和 SP"></a>SS 和 SP</h3><p>栈顶的段地址存放在 SS 中，偏移地址存放在 SP 中。</p>
+<p>任意时刻，SS:SP 指向栈顶元素。</p>
+<h3 id="ES"><a href="#ES" class="headerlink" title="ES"></a>ES</h3><p>附加段寄存器，存放当前执行程序中一个辅助数据段的段地址。</p>
+<p>经常在串传送指令中使用。</p>
+<h2 id="SI-和-DI"><a href="#SI-和-DI" class="headerlink" title="SI 和 DI"></a>SI 和 DI</h2><p>SI 和 DI 是与 BX 功能相近的寄存器，但不能够分为两个 8 位寄存器来使用。</p>
+<h2 id="BP"><a href="#BP" class="headerlink" title="BP"></a>BP</h2><p>BP 称为指针寄存器，与 SS 连用，为访问现行堆栈段提供方便。通常 BP 寄存器在间接寻址中使用，操作数在堆栈段中，由 SS 段寄存器和 BP 组合形成操作数的地址，即 BP 中存放现行堆栈段中一个数据区的“基址”的偏移量，所以称 BP 为基址指针。</p>
+<p>BX、SI、DI 和 BP</p>
+<ol>
+<li><p>在 8086 CPU 中，只有这 4 个寄存器可以用在“[]”中来进行内存单元的寻址。</p>
 </li>
-<li><p><code>nil</code> for JSON <code>null</code>。</p>
+<li><p>在 […] 中，这 4 个寄存器可以单个出现，或只能以 4 种组合出现：<br>BX 和 SI、BX 和 DI、BP 和 SI、BP 和 DI</p>
 </li>
-</ul>
+<li><p>只要在[…]中使用寄存器 BP，而指令中没有显示地给出段地址，段地址就默认在 SS 中。</p>
+</li>
+</ol>
+<h2 id="PSW"><a href="#PSW" class="headerlink" title="PSW"></a>PSW</h2><p>PSW 是 Program Status Word 的缩写，即程序状态字（也叫程序状态寄存器）、标志寄存器 FR（Flag Register）。</p>
+<p>详细信息见 <a href="/flag.html">标志寄存器</a></p>
 
     </div>
 
@@ -283,8 +301,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/JSON/" rel="tag"><i class="fa fa-tag"></i> JSON</a>
-              <a href="/tags/Golang/" rel="tag"><i class="fa fa-tag"></i> Golang</a>
+              <a href="/tags/Assembly/" rel="tag"><i class="fa fa-tag"></i> Assembly</a>
+              <a href="/tags/8086/" rel="tag"><i class="fa fa-tag"></i> 8086</a>
           </div>
 
         
@@ -292,10 +310,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/port.html" rel="next" title="端口">
-      端口 <i class="fa fa-chevron-right"></i>
+    <a href="/flag.html" rel="prev" title="标志寄存器">
+      <i class="fa fa-chevron-left"></i> 标志寄存器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/internal-interrupt.html" rel="next" title="内中断">
+      内中断 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -355,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding"><span class="nav-number">2.</span> <span class="nav-text">Encoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decoding"><span class="nav-number">3.</span> <span class="nav-text">Decoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interface"><span class="nav-number">4.</span> <span class="nav-text">interface {}</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">通用寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CX"><span class="nav-number">1.1.</span> <span class="nav-text">CX</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">段寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CS-%E5%92%8C-IP"><span class="nav-number">2.1.</span> <span class="nav-text">CS 和 IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DS"><span class="nav-number">2.2.</span> <span class="nav-text">DS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SS-%E5%92%8C-SP"><span class="nav-number">2.3.</span> <span class="nav-text">SS 和 SP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES"><span class="nav-number">2.4.</span> <span class="nav-text">ES</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SI-%E5%92%8C-DI"><span class="nav-number">3.</span> <span class="nav-text">SI 和 DI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BP"><span class="nav-number">4.</span> <span class="nav-text">BP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSW"><span class="nav-number">5.</span> <span class="nav-text">PSW</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
