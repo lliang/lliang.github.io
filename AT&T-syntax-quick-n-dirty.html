@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"lliang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="CMOS RAM 芯片简称为 CMOS，特征如下：  包含一个实时钟和一个有 128 个存储单元的 RAM 存储器（早期的计算机为 64 个字节）； 该芯片靠电池供电，所以，关机后其内部的实时钟仍可正常工作，RAM 中的信息不丢失； 128 个字节的 RAM 中，内部实时钟占用 0 ~ 0dh 单元来保存时间信息，其余大部分单元用于保存系统配置信息，供系统启动时 BIOS 程序读取。BIOS 也提">
+  <meta name="description" content="x86 汇编语言具有两个主要的语法分支：Intel 语法和 AT＆T 语法。 自从 Unix 由 AT＆T 贝尔实验室创建以来，Intel 语法在 DOS 和 Windows 世界中占主导地位，而 AT＆T 语法在 Unix 世界中占主导地位。 以下内容翻译自 AT&amp;T Assembly Syntax 本文是对 AT＆T 汇编语言语法的“快速而凌乱”的介绍，该语法在 GNU 汇编器 as（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CMOS">
-<meta property="og:url" content="https://lliang.github.io/CMOS.html">
+<meta property="og:title" content="AT&amp;T Assembly Syntax 快速介绍">
+<meta property="og:url" content="https://lliang.github.io/AT&T-syntax-quick-n-dirty.html">
 <meta property="og:site_name" content="Liu Liang">
-<meta property="og:description" content="CMOS RAM 芯片简称为 CMOS，特征如下：  包含一个实时钟和一个有 128 个存储单元的 RAM 存储器（早期的计算机为 64 个字节）； 该芯片靠电池供电，所以，关机后其内部的实时钟仍可正常工作，RAM 中的信息不丢失； 128 个字节的 RAM 中，内部实时钟占用 0 ~ 0dh 单元来保存时间信息，其余大部分单元用于保存系统配置信息，供系统启动时 BIOS 程序读取。BIOS 也提">
+<meta property="og:description" content="x86 汇编语言具有两个主要的语法分支：Intel 语法和 AT＆T 语法。 自从 Unix 由 AT＆T 贝尔实验室创建以来，Intel 语法在 DOS 和 Windows 世界中占主导地位，而 AT＆T 语法在 Unix 世界中占主导地位。 以下内容翻译自 AT&amp;T Assembly Syntax 本文是对 AT＆T 汇编语言语法的“快速而凌乱”的介绍，该语法在 GNU 汇编器 as（">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-13T10:29:01.000Z">
+<meta property="article:published_time" content="2021-05-09T11:56:48.000Z">
 <meta property="article:modified_time" content="2021-05-17T11:57:57.157Z">
 <meta property="article:author" content="Liu Liang">
 <meta property="article:tag" content="Assembly">
-<meta property="article:tag" content="8086">
+<meta property="article:tag" content="AT&amp;T">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lliang.github.io/CMOS.html">
+<link rel="canonical" href="https://lliang.github.io/AT&T-syntax-quick-n-dirty.html">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>CMOS | Liu Liang</title>
+  <title>AT&T Assembly Syntax 快速介绍 | Liu Liang</title>
   
 
 
@@ -162,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/CMOS.html">
+    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/AT&T-syntax-quick-n-dirty.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar.png">
@@ -175,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CMOS
+          AT&T Assembly Syntax 快速介绍
         </h1>
 
         <div class="post-meta">
@@ -185,7 +185,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-05-13 18:29:01" itemprop="dateCreated datePublished" datetime="2021-05-13T18:29:01+08:00">2021-05-13</time>
+              <time title="创建时间：2021-05-09 19:56:48" itemprop="dateCreated datePublished" datetime="2021-05-09T19:56:48+08:00">2021-05-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -210,14 +210,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>602</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -229,77 +229,160 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="CMOS-RAM-芯片"><a href="#CMOS-RAM-芯片" class="headerlink" title="CMOS RAM 芯片"></a>CMOS RAM 芯片</h1><p>简称为 CMOS，特征如下：</p>
-<ol>
-<li>包含一个实时钟和一个有 128 个存储单元的 RAM 存储器（早期的计算机为 64 个字节）；</li>
-<li>该芯片靠电池供电，所以，关机后其内部的实时钟仍可正常工作，RAM 中的信息不丢失；</li>
-<li>128 个字节的 RAM 中，内部实时钟占用 0 ~ 0dh 单元来保存时间信息，其余大部分单元用于保存系统配置信息，供系统启动时 BIOS 程序读取。<br>BIOS 也提供了相关的程序，使我们可以在开机的时候配置 CMOS RAM 中的系统信息。</li>
-<li>该芯片内部有两个端口，端口地址为 70h 和 71h。CPU 通过这两个端口来读写 CMOS RAM；</li>
-<li>70h 为地址端口，存放要访问的 CMOS RAM 单元的地址；71h 为数据端口，存放从选定的 CMOS RAM 单元中读取的数据，或要写入到其中的数据。</li>
-</ol>
-<p>CPU 对 CMOS RAM 的读写分两步进行，比如，读 CMOS RAM 的 2 号单元：</p>
-<ol>
-<li>将 2 送入端口 70h；</li>
-<li>从端口 71h 读出 2 号单元的内容。</li>
-</ol>
+        <p>x86 汇编语言具有两个主要的语法分支：Intel 语法和 AT＆T 语法。</p>
+<p>自从 Unix 由 AT＆T 贝尔实验室创建以来，Intel 语法在 DOS 和 Windows 世界中占主导地位，而 AT＆T 语法在 Unix 世界中占主导地位。</p>
+<p>以下内容翻译自 <a target="_blank" rel="noopener" href="http://www.sig9.com/articles/att-syntax">AT&amp;T Assembly Syntax</a></p>
+<p>本文是对 AT＆T 汇编语言语法的“快速而凌乱”的介绍，该语法在 GNU 汇编器 as（1）中实现。<br>第一次使用 AT＆T 语法可能有点令人困惑，但是如果您有任何汇编语言编程背景，一旦记住一些规则，就很容易赶上。<br>我假设您已经熟悉 x86 手册中描述的汇编语言指令的 INTEL 语法。<br>由于其简单性，我使用了 INTEL 语法的 NASM（Netwide 汇编程序）变体来引用两种格式之间的差异。</p>
+<p>GNU 汇编器是 GNU Binary Utilities（binutils）的一部分，并且是 GNU Compiler Collection 的后端。<br>尽管不是编写相当大的汇编程序的首选汇编程序，但它是当代 Unix 类系统（尤其是内核级黑客程序）的重要组成部分。<br>人们常常批评它的 AT＆T 式语法含糊不清，认为它的编写着重于用作 GCC 的后端，而很少关注“开发者友好性”。<br>如果您是来自 INTEL-Syntax 背景的汇编程序员，那么您将在代码可读性和代码生成方面遇到种种窒息。<br>尽管如此，必须指出的是，许多操作系统的代码库都依赖于作为生成低级代码的汇编程序。</p>
 <span id="more"></span>
 
-<h2 id="时间信息"><a href="#时间信息" class="headerlink" title="时间信息"></a>时间信息</h2><p>在 CMOS RAM 中，存放着当前的时间：年、月、日、时、分、秒。<br>这 6 个信息的长度都为 1 个字节，存放单元为：</p>
+<h2 id="The-Basic-Format-（基本格式）"><a href="#The-Basic-Format-（基本格式）" class="headerlink" title="The Basic Format （基本格式）"></a>The Basic Format （基本格式）</h2><p><code>mnemonic source, destination</code></p>
+<p>(助记符) 源操作数，目标操作数</p>
+<h2 id="Registers-（寄存器）"><a href="#Registers-（寄存器）" class="headerlink" title="Registers （寄存器）"></a>Registers （寄存器）</h2><p>IA-32 架构的所有寄存器名称都必须以“％”符号作为前缀，例如：％al，％bx，％ds，％cr0 等。</p>
+<p><code>mov %ax, %bx</code></p>
+<p>mov 指令，它将值从 16 位寄存器 AX 移动到 16 位寄存器 BX。</p>
+<h2 id="Literal-Values-（字面值）"><a href="#Literal-Values-（字面值）" class="headerlink" title="Literal Values （字面值）"></a>Literal Values （字面值）</h2><p>所有字面值都必须以“$”符号作为前缀。</p>
+<p><code>mov $100, %bx</code><br><code>mov $A, %al</code></p>
+<p>第一条指令将值 100 移动到寄存器 AX 中，第二条指令将 ascii A 的数值移动到 AL 寄存器中。</p>
+<h2 id="Memory-Addressing-（内存寻址）"><a href="#Memory-Addressing-（内存寻址）" class="headerlink" title="Memory Addressing （内存寻址）"></a>Memory Addressing （内存寻址）</h2><p>在 AT＆T 语法中，通过以下方式引用内存：</p>
+<p>segment-override:signed-offset(base,index,scale)</p>
+<p>根据您想要的地址，可以省略其中的一部分。</p>
+<p><code>%es:100(%eax,%ebx,2)</code></p>
+<p>请注意，偏移量和比例尺不应以“ $”作为前缀。</p>
+<p>等效的 NASM 语法示例：</p>
 <table>
 <thead>
 <tr>
-<th align="center">单元</th>
-<th align="center">0</th>
-<th align="center">2</th>
-<th align="center">4</th>
-<th align="center">7</th>
-<th align="center">8</th>
-<th align="center">9</th>
+<th align="left">GAS memory operand</th>
+<th align="left">NASM memory operand</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">信息</td>
-<td align="center">秒</td>
-<td align="center">分</td>
-<td align="center">时</td>
-<td align="center">日</td>
-<td align="center">月</td>
-<td align="center">年</td>
+<td align="left">100</td>
+<td align="left">[100]</td>
+</tr>
+<tr>
+<td align="left">%es:100</td>
+<td align="left">[es:100]</td>
+</tr>
+<tr>
+<td align="left">(%eax)</td>
+<td align="left">[eax]</td>
+</tr>
+<tr>
+<td align="left">(%eax,%ebx)</td>
+<td align="left">[eax+ebx]</td>
+</tr>
+<tr>
+<td align="left">(%ecx,%ebx,2)</td>
+<td align="left">[ecx+ebx*2]</td>
+</tr>
+<tr>
+<td align="left">(,%ebx,2)</td>
+<td align="left">[ebx*2]</td>
+</tr>
+<tr>
+<td align="left">-10(%eax)</td>
+<td align="left">[eax-10]</td>
+</tr>
+<tr>
+<td align="left">%ds:-10(%ebp)</td>
+<td align="left">[ds:ebp-10]</td>
 </tr>
 </tbody></table>
-<p>这些数据以 BCD 码的方式存放。</p>
-<h3 id="BCD-码"><a href="#BCD-码" class="headerlink" title="BCD 码"></a>BCD 码</h3><p>BCD 码是以 4 位二进制数表示十进制数码的编码方法：</p>
+<p><code>mov %ax, 100</code><br><code>mov %eax, -100(%eax)</code></p>
+<p>第一条指令将寄存器 AX 中的值移动到数据段寄存器的偏移量 100 中（默认情况下），第二条指令将 eax 寄存器中的值移动到[eax-100]中。</p>
+<h2 id="Operand-Sizes-操作数大小"><a href="#Operand-Sizes-操作数大小" class="headerlink" title="Operand Sizes (操作数大小)"></a>Operand Sizes (操作数大小)</h2><p>有时，尤其是将字面值移动到内存时，有必要指定传输大小或操作数大小。</p>
+<p>例如指令：</p>
+<p><code>mov $10, 100</code></p>
+<p>仅指定将值 10 移动到内存偏移量 100，而不指定传输大小。</p>
+<p>指定传输大小或操作数大小：</p>
+<ul>
+<li><p>在 NASM 中，这是通过将强制转换关键字 byte / word / dword 等添加到任何操作数来完成的；</p>
+</li>
+<li><p>在 AT＆T 语法中，这是通过在指令后添加后缀 b / w / l 来完成的。</p>
+</li>
+</ul>
+<p>例如：</p>
+<p><code>movb $10, %es:(%eax)</code></p>
+<p>将字节值 10 移动到存储位置[es：eax]，但是，</p>
+<p><code>movl $10, %es:(%eax)</code></p>
+<p>将长值（dword）10 移动到同一位置。</p>
+<p>再举几个例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movl $100, %ebx</span><br><span class="line">pushl %eax</span><br><span class="line">popw %ax</span><br></pre></td></tr></table></figure>
+
+<h2 id="Control-Transfer-Instructions-（控制转移指令）"><a href="#Control-Transfer-Instructions-（控制转移指令）" class="headerlink" title="Control Transfer Instructions （控制转移指令）"></a>Control Transfer Instructions （控制转移指令）</h2><p>jmp,call,ret 等指令跳转控制代码从一个部分跳到另一个部分，它可以被归类为相同代码段的跳转(near)或者不同代码内（far）的中转。分去地址可能的类型为</p>
+<p><code>jmp</code>, <code>call</code>, <code>ret</code>等指令将控制权从程序的一部分转移到另一部分。<br>它们可以归类为到同一代码段（近）或到不同代码段（远）的控制传输。</p>
+<p>分支寻址的可能类型为–相对偏移量（标签），寄存器，内存操作数和段偏移量指针。</p>
+<p>相对偏移量使用标签指定，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">label1:</span><br><span class="line">        .</span><br><span class="line">        .</span><br><span class="line">  jmp   label1</span><br></pre></td></tr></table></figure>
+
+<p>使用寄存器或存储器操作数的分支寻址必须以“*”为前缀。</p>
+<p>要指定“远”控制转移，必须在“ljmp”，“lcall”等中加上“l”作为前缀。例如，</p>
 <table>
 <thead>
 <tr>
-<th align="center">十进制</th>
-<th align="center">0</th>
-<th align="center">1</th>
-<th align="center">2</th>
-<th align="center">3</th>
-<th align="center">4</th>
-<th align="center">5</th>
-<th align="center">6</th>
-<th align="center">7</th>
-<th align="center">8</th>
-<th align="center">9</th>
+<th align="left">GAS syntax</th>
+<th align="left">NASM syntax</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">BCD 码</td>
-<td align="center">0000</td>
-<td align="center">0001</td>
-<td align="center">0010</td>
-<td align="center">0011</td>
-<td align="center">0100</td>
-<td align="center">0101</td>
-<td align="center">0110</td>
-<td align="center">0111</td>
-<td align="center">1000</td>
-<td align="center">1001</td>
+<td align="left">jmp *100</td>
+<td align="left">jmp near [100]</td>
+</tr>
+<tr>
+<td align="left">call *100</td>
+<td align="left">call near [100]</td>
+</tr>
+<tr>
+<td align="left">jmp *%eax</td>
+<td align="left">jmp near eax</td>
+</tr>
+<tr>
+<td align="left">jmp *%ecx</td>
+<td align="left">call near ecx</td>
+</tr>
+<tr>
+<td align="left">jmp *(%eax)</td>
+<td align="left">jmp near [eax]</td>
+</tr>
+<tr>
+<td align="left">call *(%ebx)</td>
+<td align="left">call near [ebx]</td>
+</tr>
+<tr>
+<td align="left">ljmp *100</td>
+<td align="left">jmp far [100]</td>
+</tr>
+<tr>
+<td align="left">lcall *100</td>
+<td align="left">call far [100]</td>
+</tr>
+<tr>
+<td align="left">ljmp *(%eax)</td>
+<td align="left">jmp far [eax]</td>
+</tr>
+<tr>
+<td align="left">lcall *(%ebx)</td>
+<td align="left">call far [ebx]</td>
+</tr>
+<tr>
+<td align="left">ret</td>
+<td align="left">retn</td>
+</tr>
+<tr>
+<td align="left">lret</td>
+<td align="left">retf</td>
+</tr>
+<tr>
+<td align="left">lret $0x100</td>
+<td align="left">retf 0x100</td>
 </tr>
 </tbody></table>
-<p>一个字节可表示两个 BCD 码，高 4 位的 BCD 码表示十位，低 4 位的 BCD 码表示个位。</p>
+<p>段偏移量指针使用以下格式指定：</p>
+<p><code>jmp $segment, $offset</code></p>
+<p>示例：</p>
+<p><code>jmp $0x10, $0x100000</code></p>
 
     </div>
 
@@ -311,7 +394,7 @@
           
           <div class="post-tags">
               <a href="/tags/Assembly/" rel="tag"><i class="fa fa-tag"></i> Assembly</a>
-              <a href="/tags/8086/" rel="tag"><i class="fa fa-tag"></i> 8086</a>
+              <a href="/tags/AT-T/" rel="tag"><i class="fa fa-tag"></i> AT&T</a>
           </div>
 
         
@@ -320,12 +403,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/external-interrupt.html" rel="prev" title="外中断">
-      <i class="fa fa-chevron-left"></i> 外中断
+    <a href="/port.html" rel="prev" title="端口">
+      <i class="fa fa-chevron-left"></i> 端口
     </a></div>
       <div class="post-nav-item">
-    <a href="/cmp.html" rel="next" title="cmp指令">
-      cmp指令 <i class="fa fa-chevron-right"></i>
+    <a href="/label.html" rel="next" title="标号">
+      标号 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -385,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CMOS-RAM-%E8%8A%AF%E7%89%87"><span class="nav-number">1.</span> <span class="nav-text">CMOS RAM 芯片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%BF%A1%E6%81%AF"><span class="nav-number">1.1.</span> <span class="nav-text">时间信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BCD-%E7%A0%81"><span class="nav-number">1.1.1.</span> <span class="nav-text">BCD 码</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Basic-Format-%EF%BC%88%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">The Basic Format （基本格式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Registers-%EF%BC%88%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Registers （寄存器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Literal-Values-%EF%BC%88%E5%AD%97%E9%9D%A2%E5%80%BC%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">Literal Values （字面值）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Addressing-%EF%BC%88%E5%86%85%E5%AD%98%E5%AF%BB%E5%9D%80%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">Memory Addressing （内存寻址）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operand-Sizes-%E6%93%8D%E4%BD%9C%E6%95%B0%E5%A4%A7%E5%B0%8F"><span class="nav-number">5.</span> <span class="nav-text">Operand Sizes (操作数大小)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-Transfer-Instructions-%EF%BC%88%E6%8E%A7%E5%88%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">Control Transfer Instructions （控制转移指令）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
