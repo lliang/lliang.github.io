@@ -158,6 +158,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/label.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/uploads/avatar.png">
+      <meta itemprop="name" content="Liu Liang">
+      <meta itemprop="description" content="个人技术博客，用于发布和交流在工作、学习当中的一些随笔，包含开发技术、程序代码、读书笔记等内容。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Liang">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/label.html" class="post-title-link" itemprop="url">Polly</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-02 00:29:32" itemprop="dateCreated datePublished" datetime="2022-10-02T00:29:32+08:00">2022-10-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DotNET/" itemprop="url" rel="index"><span itemprop="name">DotNET</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>845</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Polly"><a href="#Polly" class="headerlink" title="Polly"></a>Polly</h1><p>Polly 是一个 .NET 恢复和瞬态故障处理库，它允许开发人员以流畅且线程安全的方式表达策略，如重试、断路器、超时、隔板隔离和回退。</p>
+<p>Polly 的目标：.NET Standard 1.1（覆盖范围：.NET Core 1.0、Mono、Xamarin、UWP、WP8.1+）和 .NET Standard 2.0+（覆盖范围：.NET Core 2.0+、.NET Core 3.0 以及更高版本的 Mono、Xamarin 和 UWP 目标）。nuget 包还包括 .NET Framework 4.6.1 和 4.7.2 的直接目标。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/App-vNext/Polly" title="Polly">GitHub</a></p>
+<p>通过 <a target="_blank" rel="noopener" href="http://www.thepollyproject.org/">www.thepollyproject.org</a> 随时了解新功能公告，提示和技巧以及其他新闻</p>
+<h2 id="Installing-via-NuGet"><a href="#Installing-via-NuGet" class="headerlink" title="Installing via NuGet"></a>Installing via NuGet</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install-Package Polly</span><br></pre></td></tr></table></figure>
+
+<h2 id="瞬态故障处理和主动弹性工程"><a href="#瞬态故障处理和主动弹性工程" class="headerlink" title="瞬态故障处理和主动弹性工程"></a>瞬态故障处理和主动弹性工程</h2><p>Transient fault handling and proactive resilience engineering</p>
+<p>当今基于云的、基于微服务的或物联网的应用程序通常依赖于通过不可靠的网络与其他系统进行通信。</p>
+<p>由于暂时性故障（如网络问题和超时），或者子系统处于脱机状态、负载不足或其他无响应，此类系统可能不可用或无法访问。</p>
+<p>Polly 提供的弹性策略提供了一系列用于处理暂时性故障的反应策略，以及用于促进弹性和稳定性的先发制人和主动策略。</p>
+<h3 id="使用重试和断路器处理瞬态故障"><a href="#使用重试和断路器处理瞬态故障" class="headerlink" title="使用重试和断路器处理瞬态故障"></a>使用重试和断路器处理瞬态故障</h3><p>Handling transient faults with retry and circuit-breaker</p>
+<p>暂时性故障是其原因预计为临时情况（如临时服务不可用或网络连接问题）的错误。</p>
+<h4 id="Retry"><a href="#Retry" class="headerlink" title="Retry"></a>Retry</h4><p>重试允许调用方重试操作，期望许多故障是暂时的，并且可能会自我纠正：如果重试，操作可能会成功，可能在短暂的延迟之后。</p>
+<p>在重试之间等待可以让故障有时间进行自我纠正。指数退避和抖动等做法通过安排重试来优化这一点，以防止它们成为进一步负载或峰值的来源。</p>
+<h4 id="Circuit-Breaker"><a href="#Circuit-Breaker" class="headerlink" title="Circuit-Breaker"></a>Circuit-Breaker</h4><p>断路器检测通过它发出的呼叫中的故障级别，并在超过可配置的故障阈值时阻止调用。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lliang.github.io/file-operations.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -189,7 +284,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-23 07:45:33" itemprop="dateModified" datetime="2021-05-23T07:45:33+08:00">2021-05-23</time>
+                <time title="修改时间：2022-10-02 00:29:32" itemprop="dateModified" datetime="2022-10-02T00:29:32+08:00">2022-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -293,7 +388,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-23 07:45:33" itemprop="dateModified" datetime="2021-05-23T07:45:33+08:00">2021-05-23</time>
+                <time title="修改时间：2022-10-02 00:29:32" itemprop="dateModified" datetime="2022-10-02T00:29:32+08:00">2022-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -406,7 +501,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-23 07:45:33" itemprop="dateModified" datetime="2021-05-23T07:45:33+08:00">2021-05-23</time>
+                <time title="修改时间：2022-10-02 00:29:32" itemprop="dateModified" datetime="2022-10-02T00:29:32+08:00">2022-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -514,7 +609,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-23 07:45:33" itemprop="dateModified" datetime="2021-05-23T07:45:33+08:00">2021-05-23</time>
+                <time title="修改时间：2022-10-02 00:29:32" itemprop="dateModified" datetime="2022-10-02T00:29:32+08:00">2022-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -560,113 +655,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/cmp.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lliang.github.io/CMOS.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.png">
-      <meta itemprop="name" content="Liu Liang">
-      <meta itemprop="description" content="个人技术博客，用于发布和交流在工作、学习当中的一些随笔，包含开发技术、程序代码、读书笔记等内容。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liu Liang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/CMOS.html" class="post-title-link" itemprop="url">CMOS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-13 18:29:01" itemprop="dateCreated datePublished" datetime="2021-05-13T18:29:01+08:00">2021-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-23 07:45:33" itemprop="dateModified" datetime="2021-05-23T07:45:33+08:00">2021-05-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Assembly/" itemprop="url" rel="index"><span itemprop="name">Assembly</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>602</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="CMOS-RAM-芯片"><a href="#CMOS-RAM-芯片" class="headerlink" title="CMOS RAM 芯片"></a>CMOS RAM 芯片</h1><p>简称为 CMOS，特征如下：</p>
-<ol>
-<li>包含一个实时钟和一个有 128 个存储单元的 RAM 存储器（早期的计算机为 64 个字节）；</li>
-<li>该芯片靠电池供电，所以，关机后其内部的实时钟仍可正常工作，RAM 中的信息不丢失；</li>
-<li>128 个字节的 RAM 中，内部实时钟占用 0 ~ 0dh 单元来保存时间信息，其余大部分单元用于保存系统配置信息，供系统启动时 BIOS 程序读取。<br>BIOS 也提供了相关的程序，使我们可以在开机的时候配置 CMOS RAM 中的系统信息。</li>
-<li>该芯片内部有两个端口，端口地址为 70h 和 71h。CPU 通过这两个端口来读写 CMOS RAM；</li>
-<li>70h 为地址端口，存放要访问的 CMOS RAM 单元的地址；71h 为数据端口，存放从选定的 CMOS RAM 单元中读取的数据，或要写入到其中的数据。</li>
-</ol>
-<p>CPU 对 CMOS RAM 的读写分两步进行，比如，读 CMOS RAM 的 2 号单元：</p>
-<ol>
-<li>将 2 送入端口 70h；</li>
-<li>从端口 71h 读出 2 号单元的内容。</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/CMOS.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -757,20 +745,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -808,8 +796,8 @@
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -823,7 +811,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">29 分钟</span>
+    <span title="站点阅读时长">31 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
