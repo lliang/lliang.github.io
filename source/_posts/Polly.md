@@ -1,8 +1,11 @@
 ---
 title: Polly
 urlname: label
+date: 2021-06-09 10:36:08
+update: 2021-06-09 10:36:08
 tags:
   - DotNET
+  - Microservice
 categories: DotNET
 ---
 
